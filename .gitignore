@@ -51,7 +51,7 @@ coverage.xml
 *.pot
 
 # Django stuff:
-staticfiles/
+#staticfiles/
 
 # Sphinx documentation
 docs/_build/
@@ -327,8 +327,6 @@ intelas_test_task/media/
 
 .pytest_cache/
 .ipython/
-project.css
-project.min.css
 vendors.js
 *.min.js
 .env
