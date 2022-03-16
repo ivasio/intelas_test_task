@@ -61,24 +61,9 @@
       {% if crawling_result %}
       <div class="just-padding">
         <div class="list-group list-group-root well">
-
-          <a href="#" class="list-group-item">Item 1</a>
-          <div class="list-group">
-
-            <a href="{{ crawling_result }}" class="list-group-item">{{ crawling_result }}</a>
-            <div class="list-group">
-              <a href="{{ crawling_result }}" class="list-group-item">{{ crawling_result }}</a>
-              <a href="{{ crawling_result }}" class="list-group-item">{{ crawling_result }}</a>
-              <a href="{{ crawling_result }}" class="list-group-item">{{ crawling_result }}</a>
-            </div>
-
-            <a href="{{ crawling_result }}" class="list-group-item">{{ crawling_result }}</a>
-            <div class="list-group">
-              <a href="{{ crawling_result }}" class="list-group-item">{{ crawling_result }}</a>
-              <a href="{{ crawling_result }}" class="list-group-item">{{ crawling_result }}</a>
-              <a href="{{ crawling_result }}" class="list-group-item">{{ crawling_result }}</a>
-            </div>
-          </div>
+          {% with page=crawling_result template_name="nested_list.html" %}
+            {% include template_name %}
+          {% endwith %}
         </div>
       </div>
       {% endif %}

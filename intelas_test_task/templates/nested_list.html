@@ -1,0 +1,10 @@
+<a href="{{page.url}}" class="list-group-item">{{page.url}}</a>
+  {% if page.nested_pages %}
+  <div class="list-group">
+    {% for child in page.nested_pages %}
+      {% with page=child template_name="nested_list.html" %}
+        {% include template_name%}
+      {% endwith %}
+    {% endfor %}
+  </div>
+  {% endif %}

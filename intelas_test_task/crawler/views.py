@@ -1,6 +1,7 @@
 from django.views.generic import FormView
 
 from .forms import CrawlForm
+from .crawler import crawl
 
 
 class CrawlFormView(FormView):
@@ -9,8 +10,9 @@ class CrawlFormView(FormView):
     success_url = '/'
 
     def form_valid(self, form: CrawlForm):
+        result = crawl(start_url=form.cleaned_data['root_url'])
         return self.render_to_response(
             {
-                'crawling_result': form.cleaned_data['root_url']
+                'crawling_result': result
             }
         )
