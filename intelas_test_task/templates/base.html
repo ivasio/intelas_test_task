@@ -48,7 +48,21 @@
       {% endif %}
 
       {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
+
+      <div>
+        <form action="/" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Go">
+        </form>
+      </div>
+
+      {% if crawling_result %}
+        <div class="result">
+          {{ crawling_result }}
+        </div>
+      {% endif %}
+
       {% endblock content %}
 
     </div> <!-- /container -->
